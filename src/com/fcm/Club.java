@@ -35,9 +35,7 @@ public class Club {
     }
 
     public void printSquad() {
-        players.forEach(player -> {
-            System.out.println(player.getName() + " " + player.getLastName());
-        });
+        players.forEach(System.out::println);
     }
 
     private Player checkPlayer(String playerName, String playerLastName) {
