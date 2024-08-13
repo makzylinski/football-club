@@ -26,7 +26,6 @@ public class Club {
     }
 
     public void deletePlayer(String playerName, String playerLastName) {
-        System.out.println(checkPlayer(playerName, playerLastName));
         if(checkPlayer(playerName, playerLastName) != null) {
             players.remove(checkPlayer(playerName, playerLastName));
             System.out.println("Player has been deleted from the squad.");
@@ -42,12 +41,11 @@ public class Club {
     }
 
     private Player checkPlayer(String playerName, String playerLastName) {
-        for (int i = 0; i < players.size() - 1; i++) {
-            if(players.get(i).getName().equalsIgnoreCase(playerName)
-            && players.get(i).getLastName().equalsIgnoreCase(playerLastName)) {
+        for (Player player : players) {
+            if (player.getName().equalsIgnoreCase(playerName)
+                    && player.getLastName().equalsIgnoreCase(playerLastName)) {
                 // player exists in the squad
-                System.out.println(players.get(i));
-                return players.get(i);
+                return player;
             }
         }
         return null;
