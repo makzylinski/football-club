@@ -16,8 +16,12 @@ public class Club {
         this.budget = budget;
     }
 
-    public void addPlayer(String playerName, String playerLastName) {
-
+    public void addPlayer(String playerName, String playerLastName, LocalDate dateOfBirth) {
+        if(checkPlayer(playerName, playerLastName)) {
+            players.add(new Player(playerName, playerLastName, dateOfBirth));
+        } else {
+            System.out.println("Player is already part of the squad.");
+        }
     }
 
     private boolean checkPlayer(String playerName, String playerLastName) {
