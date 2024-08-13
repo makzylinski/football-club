@@ -18,7 +18,7 @@ public class Club {
 
     public void addPlayer(String playerName, String playerLastName, LocalDate dateOfBirth) {
         if(checkPlayer(playerName, playerLastName) == null) {
-            players.add(new Player(playerName, playerLastName, dateOfBirth));
+            players.add(new Player(playerName, playerLastName, dateOfBirth, Positions.CB));
             System.out.println(playerName + " " + playerLastName + " has been added to the squad.");
         } else {
             System.out.println("Player is already part of the squad.");

@@ -2,12 +2,13 @@ package com.fcm;
 
 import java.time.LocalDate;
 
-public class Player {
+public class Player extends PlayerStats {
     private String name;
     private String lastName;
     private LocalDate dateOfBirth;
 
-    public Player(String name, String lastName, LocalDate dateOfBirth) {
+    public Player(String name, String lastName, LocalDate dateOfBirth, Positions position) {
+        super(position);
         this.name = name;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
